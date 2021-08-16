@@ -12,6 +12,7 @@ const addOne = (arr) => {
   // Solution code here...
   // return [2, 3, 4, 5, 6];
   const newArray = [];
+  
   arr.forEach(num => {
     newArray.push(num + 1);
   });
