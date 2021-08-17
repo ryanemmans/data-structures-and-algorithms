@@ -80,8 +80,7 @@ const speaker = (words, callback) => {
   // Solution code here...
   const newArray = [];
 
-  words.forEach(word => newArray.push(callback(word))
-  )
+  words.forEach(word => newArray.push(callback(word)));
 
   return newArray;
 };
