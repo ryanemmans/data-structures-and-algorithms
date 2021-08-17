@@ -12,7 +12,7 @@ const addOne = (arr) => {
   // Solution code here...
   // return [2, 3, 4, 5, 6];
   const newArray = [];
-  
+
   arr.forEach(num => {
     newArray.push(num + 1);
   });
@@ -30,6 +30,13 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
+  const newArray = [];
+
+  arr.forEach(item => {
+    newArray.push(item + '!');
+  })
+
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,13 +144,13 @@ Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should return an array with 1 added to each value of the original array', () => {
     expect(addOne([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5, 6]);
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array with an exclamation point added to each value of the original array', () => {
     expect(addExclamation(['hi', 'how', 'are', 'you'])).toStrictEqual(['hi!', 'how!', 'are!', 'you!']);
   });
