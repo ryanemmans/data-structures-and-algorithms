@@ -73,7 +73,7 @@ const forEachTwoToThe = (arr) => {
   const newArray = [];
 
   arr.forEach(i => {
-    newArray.push(Math.pow(2, i))
+    newArray.push(Math.pow(2, i));
   })
 
   return newArray;
@@ -87,6 +87,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  return arr.map(i => Math.pow(2, i));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -261,7 +262,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
