@@ -21,16 +21,8 @@ const typeNum = (arr) => {
   return num;
 };
 
-/* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
-
-Write a function named containsAnd that, given an array of strings as input, uses filter to return an array containing only strings that contain 'and' within the string.
-
-For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
------------------------------------------------------------------------------------------------- */
-
+// CHALLENGE 3
 const containsAnd = (arr) => {
-  // Solution code here...
   let string = (word) => {
     if (word.includes ('and')) {
       return word;
@@ -41,16 +33,12 @@ const containsAnd = (arr) => {
   return andWord;
 };
 
-/* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
-
-Write a function named oddValues that, given an array of integers as input, uses filter to return an array containing only the odd integers.
-
-For example, oddValues([1,2,3]) returns [1,3].
------------------------------------------------------------------------------------------------- */
-
+// CHALLENGE 4
 const oddValues = (arr) => {
-  // Solution code here...
+  const odds = arr.filter( (num) => {
+    return (num % 2);
+  });
+  return odds;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -220,7 +208,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return an array containing only odd integers', () => {
     expect(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 3, 5, 7, 9]);
     expect(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toStrictEqual(5);
