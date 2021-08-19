@@ -1,13 +1,7 @@
 'use strict';
 
-/* ------------------------------------------------------------------------------------------------
-CHALLENGE 1 - Review
-
-Write a function called addTwo that takes in an array and adds two to every value using a for loop. Place the new value in a new array. Return the new array.
------------------------------------------------------------------------------------------------- */
-
+// CHALLENGE 1
 const addTwo = (arr) => {
-  // Solution code here...
   const newArray = [];
   for (let i = 0; i < arr.length; i++) {
     newArray.push(arr[i] + 2);
@@ -15,16 +9,17 @@ const addTwo = (arr) => {
   return newArray;
 };
 
-/* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
-
-Write a function named typeNum that, given an array as input, uses filter to return an array containing only the numbers.
-
-For example, typeNum([1, 'bob' ,3]) returns [1,3].
------------------------------------------------------------------------------------------------- */
-
+// CHALLENGE 2
 const typeNum = (arr) => {
   // Solution code here...
+  let numbers = (val) => {
+    if (typeof(val) === 'number') {
+      return val;
+    }
+  }
+
+  let num = arr.filter(numbers);
+  return num;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -200,7 +195,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array containing only numbers', () => {
     expect(typeNum([1, 'bob', 3])).toStrictEqual([1, 3]);
     expect(typeNum([1, 'bob', 3]).length).toStrictEqual(2);
