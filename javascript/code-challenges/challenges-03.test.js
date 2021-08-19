@@ -11,7 +11,6 @@ const addTwo = (arr) => {
 
 // CHALLENGE 2
 const typeNum = (arr) => {
-  // Solution code here...
   let numbers = (val) => {
     if (typeof(val) === 'number') {
       return val;
@@ -32,6 +31,14 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
+  let string = (word) => {
+    if (word.includes ('and')) {
+      return word;
+    }
+  }
+  
+  let andWord = arr.filter(string);
+  return andWord;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -204,7 +211,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return an array of strings containing the word and', () => {
     expect(containsAnd(['panda', 'ran', 'and'])).toStrictEqual(['panda', 'and']);
     expect(containsAnd(['banana', 'bob', 'xyz'])).toStrictEqual([]);
