@@ -123,6 +123,9 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  return arr.reduce((data, char) => {
+    return data[char.name];
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,7 +140,7 @@ const reversedString = (str) => {
   // Solution code here...
   return str.reduce((newStr, letter) => {
     return letter + newStr;
-  })
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -191,6 +194,10 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let child = [arr.children];
+  return child.reduce((data, char) => {
+    return char;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
