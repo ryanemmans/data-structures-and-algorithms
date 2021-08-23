@@ -59,8 +59,8 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  return arr.reduce((acc, val) => {
-    return val;
+  return arr.reduce((acc) => {
+    return acc + 1;
   }, 0);
 };
 
@@ -124,8 +124,8 @@ let starWarsData = [{
 const returnNames = (arr) => {
   // Solution code here...
   return arr.reduce((data, char) => {
-    return data[char.name];
-  });
+    return data.concat(char.name);
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -331,7 +331,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array continaing the names of the characters', () => {
     expect(returnNames(starWarsData)).toStrictEqual(['Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa']);
     expect(returnNames(starWarsData).length).toStrictEqual(5);
