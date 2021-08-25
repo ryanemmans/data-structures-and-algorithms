@@ -39,7 +39,7 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
-  return arr.splice(idx,3,0);
+  return arr.splice(idx, 3);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,6 +130,7 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  return recipe.slice(2,3);
   return result;
 };
 
