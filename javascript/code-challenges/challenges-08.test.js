@@ -70,7 +70,7 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
-  let regex = /w/g
+  let regex = /w/g;
   return str.match(regex) ? true : false;
 };
 
@@ -88,6 +88,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let regex = /[0-9]/g;
+  return regex.test(input) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -215,7 +217,7 @@ describe('Testing challenge 2', () => {
   })
 })
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
