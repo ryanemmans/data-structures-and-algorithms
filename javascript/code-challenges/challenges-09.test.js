@@ -29,6 +29,13 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  // for (let property in obj) {
+  //   return property;
+  // }
+  // return Object.keys(obj).forEach( property => {
+  //   return obj[property];
+  // })
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -222,7 +229,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return the keys from an object', () => {
     expect(getCourseKeys(courseInfo)).toStrictEqual(['name', 'duration', 'topics', 'finalExam']);
   });
