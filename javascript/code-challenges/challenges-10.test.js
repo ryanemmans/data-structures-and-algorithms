@@ -55,6 +55,13 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let sum = 0
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      sum = sum + matrix[i][j];
+    }
+  }
+  return sum;
 };
 
 
@@ -105,6 +112,8 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const newArray = [];
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,6 +139,13 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].items.length; j++) {
+      if (arr[i].items[j].name === 'Treats') {
+        return arr[i].items[j].quantity;
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -247,7 +263,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return the total sum', () => {
     expect(totalSum([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(81);
     expect(totalSum([])).toStrictEqual(0);
@@ -281,7 +297,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
