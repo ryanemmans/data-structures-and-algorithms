@@ -55,17 +55,6 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
-  let row = new Array(matrix.length).fill(0);
-  let col = new Array(matrix.length).fill(0);
-  for (let i = 0; i < matrix.length - 1; i++) {
-    for (let j = 0; j < matrix[i].length - 1; j++) {
-      let val = matrix[i][j];
-      row[i] += val;
-      col[j] += val;
-      // return val;
-    }
-  }
-  return row;
 };
 
 
@@ -93,7 +82,15 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
+  let hours = [];
+  for (let i = 0; i < stores[0].length; i++) {
+    let total = 0;
+    for (let j = 0; j < stores.length; j++) {
+      total = total + stores[j][i];
+    }
+    hours.push(total);
+  }
+  return hours;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -257,7 +254,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should add the hourly totals array', () => {
     expect(grandTotal(cookieStores)).toStrictEqual([88, 153, 252, 286, 139, 161, 145, 232, 276, 207, 161, 169]);
   });
