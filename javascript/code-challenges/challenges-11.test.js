@@ -77,16 +77,27 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-};
+  input.map((arr) => {
+    return arr.filter((num => {
+      typeof num === 'number' &&
+        num % 5 === 0 ? true : false
+    }).map(num => Math.pow(2, num)))
+  }
+  )
+}
+
+
+// input.map(subArr => subArr.filter(num => typeof num === 'number' && num % 5 === 0 ? true : false).map(num => Math.pow(2, num)));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
-
+ 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
 returns the names of the characters whose gender is either male or female.
-
+ 
 The names should be combined into a single string with each character name separated by "and".
-
+ 
 For example, "C-3PO and Luke Skywalker".
 ------------------------------------------------------------------------------------------------ */
 
@@ -147,7 +158,7 @@ let findMaleAndFemale = (data) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
-
+ 
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
 ------------------------------------------------------------------------------------------------ */
 
@@ -157,13 +168,13 @@ let findShortest = (data) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-10.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
@@ -194,7 +205,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
   });
