@@ -21,7 +21,7 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
-  let regex = /^\d{4}$/gm;
+  let regex = /^\d{4}$/g;
   return regex.test(pin) ? true : false;
 };
 
@@ -35,6 +35,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 
 const validateWord = (word) => {
   // Solution code here...
+  let regex = /^[a-zA-Z]{5,10}$/g;
+  return regex.test(word) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +138,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should validate a word between 5 and 10 characters', () => {
     expect(validateWord('Hello')).toBeTruthy();
     expect(validateWord('Bob')).toBeFalsy();
