@@ -8,6 +8,16 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
   // Solution code here...
+  let str = '';
+  let idx = -1;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > str.length) {
+      idx = i;
+      str = arr[i];
+    }
+  }
+  return idx;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,6 +80,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,7 +169,7 @@ Run your tests from the console: jest challenges-13.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
     const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
     const strArray2 = [];
