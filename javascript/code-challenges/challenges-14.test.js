@@ -105,11 +105,9 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  return arr.filter((person) => {
-    (person.height > person.height[0]).map((person) => {
-      (person.name).join(' - ');
-    });
-  });
+  return arr.filter((name) =>
+    name.height > 172).map((name) =>
+      name.name).join(' - ');
 };
 
 
@@ -149,7 +147,7 @@ https:/missingslash.org returns false because the URL is malformed
 const isSecure = (url) => {
   // Solution code here...
   return url.includes('https://');
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -202,7 +200,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return only characters that are bigger than Luke', () => {
     expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
     expect(biggerThanLuke([])).toStrictEqual('');
