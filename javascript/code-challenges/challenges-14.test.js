@@ -171,6 +171,7 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  const helpCheck = (row1, col1, row2, col2, row3, col3)
 };
 
 /* ------------------------------------------------------------------------------------------------
