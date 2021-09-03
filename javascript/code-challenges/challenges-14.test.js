@@ -105,7 +105,13 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  return arr.filter((person) => {
+    return (person.height > person.height[0]).map((person) => {
+      return (person.name).join(' - ');
+    });
+  });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -123,6 +129,9 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    return (a[property] < b[property] ? -1 : 1);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -198,7 +207,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
