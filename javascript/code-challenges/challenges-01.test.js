@@ -12,11 +12,7 @@ const addOne = (arr) => {
   // Solution code here...
   // return [2, 3, 4, 5, 6];
   const newArray = [];
-
-  arr.forEach(num => {
-    newArray.push(num + 1);
-  });
-
+  arr.forEach(num => newArray.push(num + 1));
   return newArray;
 };
 
@@ -31,11 +27,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 const addExclamation = (arr) => {
   // Solution code here...
   const newArray = [];
-
-  arr.forEach(item => {
-    newArray.push(item + '!');
-  })
-
+  arr.forEach(str => newArray.push(str + '!'));
   return newArray;
 };
 
@@ -50,11 +42,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 const allUpperCase = (arr) => {
   // Solution code here...
   const newArray = [];
-
-  arr.forEach(string => {
-    newArray.push(string.toUpperCase());
-  })
-
+  arr.forEach(str => newArray.push(str.toUpperCase()));
   return newArray;
 };
 
@@ -70,18 +58,13 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
-  // const newArray = [];
-
   return word.toUpperCase() + '!';
-
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
   const newArray = [];
-
   words.forEach(word => newArray.push(callback(word)));
-
   return newArray;
 };
 
@@ -108,10 +91,7 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  for (let i = 0; i < times; i++) {
-    callback(arr,num);
-  }
-
+  for (let i = 0; i < times; i++) { callback(arr, num) }
   return arr;
 };
 
@@ -135,19 +115,26 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  const newArray = [];
+  availableItems.forEach((item) => {
+    if (item.available) {
+      newArray.push(item.name);
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
-
+ 
 Write a function named fizzbuzz that takes in an array of numbers.
-
+ 
 Iterate over the array using forEach to determine the output based on several rules:
   - If a number is divisible by 3, add the word "Fizz" to the output array.
   - If the number is divisible by 5, add the word "Buzz" to the output array.
   - If the number is divisible by both 3 and 5, add the phrase "Fizz Buzz" to the output array.
   - Otherwise, add the number to the output array.
-
+ 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
@@ -157,13 +144,13 @@ const fizzbuzz = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-01.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
@@ -197,7 +184,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
 
   test('It should only add the available items to the list', () => {
