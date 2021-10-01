@@ -11,10 +11,8 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
+const toLastNames = people => people.map(person => (`${person.firstName} ${person.lastName}`));
   // Solution code here...
-  return people.map(person => (person.firstName + ' ' + person.lastName));
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,12 +21,8 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => {
+const addValues = (arr) => arr.reduce((acc, val) => acc + val, 0);
   // Solution code here...
-  return arr.reduce((acc, val) => {
-    return acc + val;
-  }, 0);
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,12 +36,8 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
+const addPurchases = (arr) => arr.reduce((acc, val) => acc + val.purchasePrice, 0);
   // Solution code here...
-  return arr.reduce((acc, val) => {
-    return acc + val.purchasePrice;
-  }, 0);
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -57,12 +47,8 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
+const countNumberOfElements = (arr) => arr.reduce((acc) => acc + 1, 0);
   // Solution code here...
-  return arr.reduce((acc) => {
-    return acc + 1;
-  }, 0);
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -121,12 +107,8 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
+const returnNames = (arr) => arr.reduce((data, char) => data.concat(char.name), []);
   // Solution code here...
-  return arr.reduce((data, char) => {
-    return data.concat(char.name);
-  }, []);
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,10 +121,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 const reversedString = (str) => {
   // Solution code here...
   let string = str.split('');
-  let reverse = string.reduce((acc, letter) => {
-    return letter + acc;
-  }, '');
-  return reverse;
+  return string.reduce((acc, letter) => letter + acc, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -194,13 +173,8 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
+const countNumberOfChildren = (arr) => arr.reduce((acc, val) => val.children ? acc + val.children.length : acc + 0, 0);
   // Solution code here...
-  let child = [arr.children];
-  return child.reduce((data, char) => {
-    return char;
-  }, 0);
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -346,7 +320,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
