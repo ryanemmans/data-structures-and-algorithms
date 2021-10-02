@@ -22,12 +22,8 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
+const getNames = (arr) => arr.map((person) => person.name.split('').reverse().join(''));
   // Solution code here...
-  return arr.map((person) => {
-  return person.name.split('').reverse().join('');
-});
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -36,10 +32,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = (str) => {
-  return str = str + ' The end.'
+const appendTheEnd = (str) => str = `${str} The end.`;
   // Solution code here...
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -54,10 +48,8 @@ appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
-const appendFirstToLast = (arr) => {
+const appendFirstToLast = (arr) => arr.push(arr[0]);
   // Solution code here...
-  arr.push(arr[0])
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -74,10 +66,8 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
+const addBirthYearProperty = (obj, year) => obj.yearBorn = year;
   // Solution code here...
-  obj.yearBorn = year;
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -92,12 +82,8 @@ setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
-const setStatusAsAuthor = (people) => {
+const setStatusAsAuthor = (people) => people.forEach((val) => val.isAuthor = true);
   // Solution code here...
-  people.forEach((val) => {
-    val.isAuthor = true;
-  })
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -114,9 +100,8 @@ append(a, b);
 console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
-const append = (arr1, arr2) => {
+const append = (arr1, arr2) => arr1.push(...arr2);
   // Solution code here...
-};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -175,7 +160,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
