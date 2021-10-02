@@ -12,7 +12,7 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => people.map(person => (`${person.firstName} ${person.lastName}`));
-  // Solution code here...
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,7 +22,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => arr.reduce((acc, val) => acc + val, 0);
-  // Solution code here...
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -37,7 +37,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => arr.reduce((acc, val) => acc + val.purchasePrice, 0);
-  // Solution code here...
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,7 +48,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => arr.reduce((acc) => acc + 1, 0);
-  // Solution code here...
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -108,7 +108,7 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => arr.reduce((data, char) => data.concat(char.name), []);
-  // Solution code here...
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -174,7 +174,7 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => arr.reduce((acc, val) => val.children ? acc + val.children.length : acc + 0, 0);
-  // Solution code here...
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -184,9 +184,8 @@ Write a function that, given an array of numbers as input, uses reduce to calcul
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
-const calculateAverage = (arr) => {
-  // Solution code here...
-};
+const calculateAverage = (arr) => arr.reduce((sum, val) => sum + val, 0) / arr.length;
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -207,6 +206,12 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((nums, val) => {
+    if (isPrime(val)) {
+      ++nums;
+    }
+    return nums;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -326,13 +331,13 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
