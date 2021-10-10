@@ -9,8 +9,8 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str) {
   // Solution code here...
-  return str.split('').splice(str.length - 10);
-}
+  return str.split('').splice(- 10);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -113,7 +113,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   // Solution code here...
   const newArray = [];
-
+  let i = 0;
+  hours.forEach(hour => {
+    newArray.push({ sales: `${data[i]} cookies`, time: hour });
+    i++;
+  })
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -276,7 +281,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should create an object of data for each store', () => {
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
       { sales: '88 cookies', time: '9 a.m.' },
