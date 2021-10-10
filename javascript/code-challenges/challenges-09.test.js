@@ -8,12 +8,8 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
-  // Solution code here...
-  return arr.reduce((acc, val) => {
-    return acc = acc > val ? acc : val;
-  }, 0);
-};
+const maxInArray = (arr) => arr.reduce((acc, val) => acc = acc > val ? acc : val, 0);
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -28,10 +24,8 @@ const courseInfo = {
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
-  return Object.keys(obj);
-};
+const getCourseKeys = (obj) => Object.keys(obj);
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -41,12 +35,8 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
-  // Solution code here...
-  return Object.values(obj).forEach(value => {
-    return value ? true : false;
-  })
-};
+const checkValues = (obj, value) => Object.values(obj).includes(value) ? true : false;
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -67,22 +57,8 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-  Object.keys(obj).forEach(property => {
-    return property, obj[property];
-  })
-  // return properties.forEach(property => {
-  //   return property, obj[property];
-  // })
-
-  // let properties = Object.keys(obj);
-  // return properties.forEach(property => {
-  //   return (property, obj[property]);
-  // })
-};
-
-
+const updateNumbers = (obj) => Object.entries(obj).map(elem => `${elem[0]}: ${elem[1]}`);
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -136,10 +112,7 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
-  Object.values(arr).forEach(value => {
-    return arr.push(value.house[houses]);
-  })
-  // I have no idea what I'm doing here.
+  arr.forEach(obj => houses.push(obj.house));
   return houses;
 };
 
@@ -157,7 +130,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let hasChildren = false;
+  arr.forEach(person => {
+    if (Object.values(person).includes(character) && Object.keys(person).includes('children')) {
+      hasChildren = true;
+    }
+  })
+  // for(let person of Object.values(arr)) {
+  //   (person.name === character) && (person.children) ? hasChildren = true : hasChildren = false;
+  return hasChildren
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -248,7 +229,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true if the value is in the object', () => {
     expect(checkValues({ class: '301' }, '301')).toBe(true);
   });
@@ -258,7 +239,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return an an array of names and numbers', () => {
     const startingObj = {
       'Grace Hopper': '222-303-5938',
@@ -270,7 +251,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array of the names of the houses', () => {
     expect(getHouses(characters)[0]).toStrictEqual('Stark');
     expect(getHouses(characters).length).toStrictEqual(7);
@@ -278,7 +259,7 @@ xdescribe('Testing challenge 5', () => {
 });
 
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
