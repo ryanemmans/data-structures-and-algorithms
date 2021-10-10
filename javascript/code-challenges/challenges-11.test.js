@@ -20,10 +20,8 @@ Becomes:
 
 function transformToLis(obj) {
   // Solution code here...
-  return Object.entries(obj).map((item) => {
-    return `<li>${item[0]}: ${item[1]}</li>`;
-  });
-}
+  return Object.entries(obj).map(item => `<li>${item[0]}: ${item[1]}</li>`);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -40,9 +38,7 @@ const count = (target, input) => {
   if (input.length === 0) {
     return 0;
   } else {
-    const arr = input.map((arr) => {
-      return arr.filter((num) => num === target).length;
-    });
+    const arr = input.map(arr => arr.filter(num => num === target).length);
     return arr.reduce((acc, val) => (acc += val));
   }
 };
@@ -80,9 +76,7 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => input.map((arr) => {
-  return arr.filter((num) => (typeof num === 'number' && num % 5 === 0 ? true : false)).map((num) => Math.pow(2, num))
-});
+const divisibleByFiveTwoToThePower = (input) => input.map(arr => arr.filter(num => typeof num === 'number' && num % 5 === 0 ? true : false).map(num => Math.pow(2, num)));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -146,10 +140,8 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
-  return data.filter((person) => person.gender === 'male' || person.gender === 'female').map((person) => person.name).join(' and ');
-};
+let findMaleAndFemale = (data) => data.filter(char => char.gender === 'male' || char.gender === 'female').map(char => char.name).join(' and ');
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
@@ -159,12 +151,10 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-  let result = data.map(character => {
-    return { height: character.height, charName: character.name };
-  }).sort((a, b) => {
-    return a.height - b.height;
-  });
-  return result[0].charName;
+  let shortest = data.map(char => {
+    return { height: char.height, charName: char.name };
+  }).sort((a, b) => a.height - b.height);
+  return shortest[0].charName;
 };
 
 /* ------------------------------------------------------------------------------------------------
