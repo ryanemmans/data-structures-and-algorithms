@@ -10,12 +10,8 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 ------------------------------------------------------------------------------------------------ */
 
-const screenForNames = (arr) => {
-  // Solution code here...
-  return arr.filter(name => {
-    return /^(Mr|Mrs|Ms|Dr).( )[A-Z]/g.test(name);
-  });
-};
+const screenForNames = (arr) => arr.filter(name => /^(Mr|Mrs|Ms|Dr).( )[A-Z]/g.test(name));
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -25,12 +21,8 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = (arr) => {
-  // Solution code here...
-  return arr.map(str => {
-    return str.charAt(0).toUpperCase() + str.substring(1);
-  });
-};
+const toTitleCase = (arr) => arr.map(str => str.charAt(0).toUpperCase() + str.substring(1));
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -103,12 +95,8 @@ let starWarsData = [{
   gender: 'n/a'
 }];
 
-let biggerThanLuke = (arr) => {
-  // Solution code here...
-  return arr.filter((name) =>
-    name.height > 172).map((name) =>
-      name.name).join(' - ');
-};
+let biggerThanLuke = (arr) => arr.filter((name) => name.height > 172).map((name) => name.name).join(' - ');
+// Solution code here...
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,12 +113,8 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => {
-  // Solution code here...
-  return arr.sort((a, b) => {
-    return (a[property] < b[property] ? -1 : 1);
-  });
-};
+const sortBy = (property, arr) => arr.sort((a, b) => (a[property] < b[property] ? -1 : 1));
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -144,11 +128,8 @@ http://www.insecure.com returns false because the URL is not secure
 https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
-const isSecure = (url) => {
-  // Solution code here...
-  return url.includes('https://');
-
-};
+const isSecure = (url) => url.includes('https://');
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
@@ -171,18 +152,42 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
-  const helpCheck = (row1, col1, row2, col2, row3, col3)
+  if (board[0][0] === board[0][1] && board[0][0] === board[0][2] && board[0][0] !== '') {
+    return true;
+
+  } else if (board[1][0] === board[1][1] && board[1][0] === board[1][2] && board[1][0] !== '') {
+    return true;
+
+  } else if (board[2][0] === board[2][1] && board[2][0] === board[2][2] && board[2][0] !== '') {
+    return true;
+
+  } else if (board[0][0] === board[1][0] && board[0][0] === board[2][0] && board[0][0] !== '') {
+    return true;
+
+  } else if (board[0][1] === board[1][1] && board[0][1] === board[2][1] && board[0][1] !== '') {
+    return true;
+
+  } else if (board[0][2] === board[1][2] && board[0][2] === board[2][2] && board[0][2] !== '') {
+    return true;
+
+  } else if (board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[0][0] !== '') {
+    return true;
+
+  } else if (board[0][2] === board[1][1] && board[0][2] === board[2][0] && board[0][2] !== '') {
+    return true;
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenge-14.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
@@ -246,7 +251,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true if there are three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
