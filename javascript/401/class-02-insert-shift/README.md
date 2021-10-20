@@ -15,7 +15,7 @@ If we take the length of the array and divide it in half, we could find the inde
 - Use splice to insert the element. (But I don't think it's that simple.)
 - Return the array.
 
-- (An alternative would be dividing the array in half and using a for loop, but I'm not yet totally clear on how to execture this.)
+- (An alternative would be dividing the array in half and using a for loop, but I'm not yet totally clear on how to execute this.)
 
 ## Pseudocode
 
