@@ -51,7 +51,7 @@ To String:
 class Node
   constructor takes in value
     this.value equals value
-    this.nex equals null
+    this.next equals null
 
 class LinkedList
   constructor
