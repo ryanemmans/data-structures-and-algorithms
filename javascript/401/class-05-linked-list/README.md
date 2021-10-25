@@ -82,4 +82,8 @@ class LinkedList
     return string by adding 'NULL'
 ```
 
+## Code
+
+[linked-list.js](./linked-list.js)
+
 [back](../README.md)
