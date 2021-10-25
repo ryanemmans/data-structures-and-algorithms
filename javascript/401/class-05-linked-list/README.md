@@ -1,53 +1,85 @@
 # Implementation: Singly Linked Lists
 
-Includes a function that takes in two parameters: a sorted array and the search key. It returns the index of the array’s element that is equal to the value of the search key or -1 if the element is not in the array.
+## Problem Domain
 
-## Inputs / Outputs
+Node: Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 
-Input:
+Linked List: Create a Linked List class. Within your Linked List class, include a head property. Upon instantiation, an empty Linked List should be created.
 
-`[4, 8, 15, 16, 23, 42], 15`\
-`[-131, -82, 0, 27, 42, 68, 179], 42`\
-`[11, 22, 33, 44, 55, 66, 77], 90`\
-`[1, 2, 3, 5, 6, 7], 4`
+The class should contain the following methods:
 
-Output:
+- `insert`
+  - Arguments: value
+  - Returns: nothing
+  - Adds a new node with that value to the head of the list with an O(1) Time performance.
+- `includes`
+  - Arguments: value
+  - Returns: Boolean
+  - Indicates whether that value exists as a Node’s value somewhere within the list.
+- `to string`
+  - Arguments: none
+  - Returns: a string representing all the values in the Linked List, formatted as:
+`"{ a } -> { b } -> { c } -> NULL"`
 
-`2`, `4`, `-1`, `-1`
+Any exceptions or errors that come from your code should be semantic, capture-able errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 
 ## Whiteboard Process
 
-![Binary Search of Sorted Array](./binary-search.png)
+![Singly Linked List](./linked-list.png)
 
 ## Algorithm
 
-If we take the length of the array and divide it in half, we could find the index where the search key exists.
+Create a Node class with a constructor with properties for the value and next.
 
-- Declare variables for Left and Right.
-- Run a while loop to determine the midpoint between Left and Right.
-  - As the loop runs, the length between Left and Right will divide by 2.
-- If Left becomes greater than Right, the loop will end.
-- Return -1 if the search key is not in the array.
+Create a LinkedList class with a constructor with a property for the head. Create the following methods:
+
+Insert:
+
+- Create a new node that takes in a value. Set the next property of the new node as the current head. The head will be equal to the new node.
+
+Includes:
+
+- Using a while loop, current will be truthy. If current value equals search value, return true. Current will be current.next to traverse the list. Return false if value is outside of the list.
+
+To String:
+
+- Declare a variable with an empty string. Using a while loop, current will be truthy. Add current node value to the empty string. Add a value of null to the string outside of the loop.
 
 ## Pseudocode
 
 ```plaintext
-function BinarySearch takes in `arr` and `key`
+class Node
+  constructor takes in value
+    this.value equals value
+    this.nex equals null
 
-  declare left to equal 0
-  declare right to equal arr.length -1
+class LinkedList
+  constructor
+    this.head equals null
 
-  while left <= right
-    declare mid = (left + right) / 2
-    if arr[mid] = key
-      return mid
-    else if (target < arr[mid])
-      right = mid - 1
-    else
-      left = mid + 1
-      
-  return -1
+  insert
+    declare newNode to equal new Node, takes in value
+    newNode.next equals head
+    head equals newNode
+
+  includes
+    current equals head
+    while current
+      if current value equals value
+        return true
+
+      current equals current.next
+
+    return false
+
+  toString
+    current equals head
+    declare empty string
+    while current
+      add current value to empty string
+      current equals current.next
+
+    return string by adding 'NULL'
 ```
-
 
 [back](../README.md)
