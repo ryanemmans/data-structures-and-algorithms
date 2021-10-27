@@ -42,6 +42,6 @@ Coming Soon...
 
 ## Code
 
-Coming soon...
+[Linked List `k`'th](./linked-list.js)
 
 [back](../README.md)
