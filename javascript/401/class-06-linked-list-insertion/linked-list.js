@@ -13,15 +13,16 @@ class LinkedList {
   }
 
   append(val) {
-    
+
   }
 
   insertBefore(val) {
-    
+
   }
 
   insertAfter() {
-  
+
+  }
 }
 
 module.exports = {
