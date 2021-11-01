@@ -14,7 +14,7 @@ xdescribe('Testing linked list', () => {
     // expect(list.head.val).toBe(1);
   });
 
-  it('Can successfully insert a node before a node located i the middle of a linked list', () => {
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
     const list = new LinkedList();
     // list.head = new Node(1);
     // expect(list.head.val).toBe(1);

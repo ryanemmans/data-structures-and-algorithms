@@ -15,6 +15,7 @@ class LinkedList {
   kthFromEnd(k) {
     
   }
+}
 
 module.exports = {
   Node,
