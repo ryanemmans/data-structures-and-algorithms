@@ -16,3 +16,4 @@ Ryan Emmans
 8. [Linked List Zip](class-08-linked-list-zip/README.md)
 9. [Linked List Reverse](class-09-linked-list-reverse/README.md)
 10. [Stack and Queue](class-10-stack-and-queue/README.md)
+11. [Pseudo Queue](class-11-pseudo-queue.README.md)
