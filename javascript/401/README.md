@@ -18,3 +18,6 @@ Ryan Emmans
 10. [Stack and Queue](class-10-stack-and-queue/README.md)
 11. [Pseudo Queue](class-11-pseudo-queue/README.md)
 12. [Stack Queue Animal Shelter](class-12-stack-queue-animal-shelter/README.md)
+13. (no challenge)
+14. (no challenge)
+15. [Binary Tree and BST](class-15-binary-tree/README.md)
