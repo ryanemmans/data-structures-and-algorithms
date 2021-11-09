@@ -21,3 +21,4 @@ Ryan Emmans
 13. (no challenge)
 14. (no challenge)
 15. [Binary Tree and BST](class-15-binary-tree/README.md)
+16. [Tree Max](class-16-tree-max/README.md)
