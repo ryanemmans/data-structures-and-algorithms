@@ -33,6 +33,6 @@ We will need to traverse the binary tree recursively using the pre-order method 
 ## Solution
 
 - [Tree Max](./tree-max.js)
-- [Test](./tree-max.tes.js)
+- [Test](./tree-max.test.js)
 
 [back](../README.md)
