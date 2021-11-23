@@ -24,3 +24,11 @@ Ryan Emmans
 16. [Tree Max](class-16-tree-max/README.md)
 17. [Tree Breadth First](class-17-tree-breadth-first/README.md)
 18. [Tree Fizz Buzz](class-18-tree-fizz-buzz/README.md)
+19. [Compare Directories](class-19-compare-directories/README.md)
+20. Midterm Project Week
+21. Midterm Project Week
+22. Midterm Project Week
+23. Midterm Project Week
+24. Midterm Project Week
+25. Midterm Project Week
+26. [Insertion Sort](class-26-insertion-sort/README.md)
