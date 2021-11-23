@@ -7,14 +7,14 @@ class Node {
   }
 }
 
-function fizzBuzzTree(kary){
-  if(!kary.root){
+function fizzBuzzTree(kary) {
+  if (!kary.root) {
     return;
   }
   let queue = [];
   queue.unshift(kary.root);
 
-  while(queue.length > 0){
+  while (queue.length > 0) {
     let front = queue.pop();
     front.value = findValues(front.value);
 
