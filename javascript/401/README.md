@@ -32,3 +32,4 @@ Ryan Emmans
 24. Midterm Project Week
 25. Midterm Project Week
 26. [Insertion Sort](class-26-insertion-sort/README.md)
+27. [Merge Sort](class-27-merge-sort/README.md)
