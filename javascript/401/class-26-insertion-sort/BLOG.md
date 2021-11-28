@@ -52,8 +52,8 @@ Output: `[4,8,15,16,23,42]`
 ### Pass 5:
 
 - Is index 5 less than index 4?
-  - Yes - values are then swapped.
-  - `[4,8,16,23,15,42]`
+  - Yes - value is placed in a temp value while checking, and then swapped 3 index positions.
+  - `[4,8,15,16,23,42]`
 
 ## Efficiency
 
