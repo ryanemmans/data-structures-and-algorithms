@@ -31,14 +31,9 @@ For your own understanding, consider also stepping through these inputs:
 - Few uniques: `[5,12,7,5,5,7]`
 - Nearly-sorted: `[2,3,5,7,13,11]`
 
-## Whiteboard Process
-
-![Insertion Sort](./insertion-sort.png)
-
-## Approach & Efficiency
-
 ## Solution
 
+- [Blog](./BLOG.md)
 - [Insertion Sort](./insertion-sort.js)
 - [Test](./insertion-sort.test.js)
 
