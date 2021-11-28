@@ -2,7 +2,12 @@
 
 Merge sort is an efficient, general-purpose, and comparison-based sorting algorithm.
 
-![Merge Sort](./merge-sort.png)
+## Algorithm
+
+1. Split the input array in half
+2. Continue splitting until the sub-arrays contain only one element.
+3. Then merge sub-arrays while sorting smallest to largest.
+4. Repeat until all sub-arrays have been merged into an array of the original length.
 
 ## Psuedocode
 
@@ -46,21 +51,11 @@ ALGORITHM Merge(left, right, arr)
 
 Sample Array: `[8,4,23,42,16,15]`
 
-### Pass 1:
-
-### Pass 2:
-
-### Pass 3:
-
-### Pass 4:
-
-### Pass 5:
-
-### Pass 6:
+![Merge Sort](./merge-sort.png)
 
 ## Efficiency
 
 - Time:
-  - .
+  - O(nlogn)
 - Space:
-  - .
+  - O(n)
