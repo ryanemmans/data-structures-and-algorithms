@@ -62,5 +62,6 @@ For your own understanding, consider also stepping through these inputs:
 
 - [Merge Sort](./merge-sort.js)
 - [Test](./merge-sort.test.js)
+- [Blog](./BLOG.md)
 
 [back](../README.md)
