@@ -2,8 +2,6 @@
 
 Selection Sort analyzes scenarios beyond the worst case.
 
-![Insertion Sort](./insertion-sort.png)
-
 ## Psuedocode
 
 ```plaintext
@@ -26,6 +24,8 @@ InsertionSort(int[] arr)
 Sample Array: `[8,4,23,42,16,15]`
 
 Output: `[4,8,15,16,23,42]`
+
+![Insertion Sort](./insertion-sort.png)
 
 ### Pass 1:
 
