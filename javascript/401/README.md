@@ -37,3 +37,4 @@ Ryan Emmans
 29. [29](class-29/README.md)
 30. [Hash Table](class-30-hash-table/README.md)
 31. [Merge Sort](class-31-merge-sort/README.md)
+32. [Tree Intersection](class-32-tree-intersection/README.md)
