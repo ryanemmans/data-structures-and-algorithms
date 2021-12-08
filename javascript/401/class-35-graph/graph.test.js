@@ -2,7 +2,7 @@
 
 const Graph = require('./graph.js');
 
-describe('Testing the HashTable', () => {
+describe('Testing the Graph', () => {
   it('Vertex can be successfully added to the graph', () => {
     let graph = new Graph();
 
