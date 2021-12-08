@@ -39,3 +39,5 @@ Ryan Emmans
 31. [Merge Sort](class-31-merge-sort/README.md)
 32. [Tree Intersection](class-32-tree-intersection/README.md)
 33. [Hashmap Left Join](class-33-hashmap-left-join/README.md)
+34. [String Unique Characters](class-34-unique-chars/README.md)
+35. [Graph](class-35-graph/README.md)
