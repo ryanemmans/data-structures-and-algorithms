@@ -34,7 +34,7 @@ Ryan Emmans
 26. [Insertion Sort](class-26-insertion-sort/README.md)
 27. [Merge Sort](class-27-merge-sort/README.md)
 28. [Quick Sort](class-28-quick-sort/README.md)
-29. [29](class-29/README.md)
+29. [Merge Sort 2](class-29-merge-sort/README.md)
 30. [Hash Table](class-30-hash-table/README.md)
 31. [Merge Sort](class-31-merge-sort/README.md)
 32. [Tree Intersection](class-32-tree-intersection/README.md)
