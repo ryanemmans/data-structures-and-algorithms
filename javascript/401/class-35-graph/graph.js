@@ -63,10 +63,10 @@ class Graph {
   breadthFirst(startVertex) {
 
     const queue = [];
-    const visitedNodes = new Set();
+    const visitedVertices = new Set();
 
     queue.push(startVertex);
-    visitedNodes.add(startVertex);
+    visitedVertices.add(startVertex);
 
     while (queue.length) {
       const current = queue.shift();
@@ -76,15 +76,15 @@ class Graph {
       for (let edge of neighbors) {
         let neighbor = edge.vertex;
 
-        if (!visitedNodes.has(neighbor)) {
+        if (!visitedVertices.has(neighbor)) {
           queue.push(neighbor);
-          visitedNodes.add(neighbor);
+          visitedVertices.add(neighbor);
         } else {
           continue;
         }
       }
     }
-    return visitedNodes;
+    return visitedVertices;
   }
 }
 
