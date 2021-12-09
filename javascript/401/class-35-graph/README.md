@@ -43,6 +43,12 @@ The should should include the following methods:
 ![Graph2](./img/graph2.png)  
 ![Graph3](./img/graph3.png)
 
+## Approach & Efficiency
+
+addVertex, addEdge : Have a Big O Notation of O(1) in time (constant).
+
+getVertices, getNeighbors, size : All have a Big O Notation of O(n) in time (linear).
+
 ### Implementation
 
 ```js
