@@ -41,4 +41,5 @@ Ryan Emmans
 33. [Hashmap Left Join](class-33-hashmap-left-join/README.md)
 34. [String Unique Characters](class-34-unique-chars/README.md)
 35. [Graph](class-35-graph/README.md)
-35. [Graph Breadth First](class-36-graph-breadth-first/README.md)
+36. [Graph Breadth First](class-36-graph-breadth-first/README.md)
+37. [Graph Business Trip](class-37-graph-business-trip/README.md)
